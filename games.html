@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💝 Valentine's Game Hub 💝</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hearts-background"></div>
+    
+    <header>
+        <h1>💝 Valentine's Game Hub 💝</h1>
+        <p class="tagline">Play cute games with your loved ones!</p>
+    </header>
+
+    <main>
+        <!-- Game Selection Screen -->
+        <div id="game-menu" class="game-menu">
+            <div class="games-grid">
+                <div class="game-card" onclick="startGame('memory')">
+                    <div class="game-icon">🃏</div>
+                    <h3>Memory Match</h3>
+                    <p>Find matching pairs of love!</p>
+                </div>
+                
+                <div class="game-card" onclick="startGame('trivia')">
+                    <div class="game-icon">❤️</div>
+                    <h3>Love Trivia</h3>
+                    <p>Test your romantic knowledge!</p>
+                </div>
+                
+                <div class="game-card" onclick="startGame('arrow')">
+                    <div class="game-icon">🏹</div>
+                    <h3>Cupid's Arrow</h3>
+                    <p>Hit the hearts before time runs out!</p>
+                </div>
+                
+                <div class="game-card" onclick="startGame('scramble')">
+                    <div class="game-icon">💌</div>
+                    <h3>Word Scramble</h3>
+                    <p>Unscramble romantic words!</p>
+                </div>
+            </div>
+            
+            <div class="leaderboard-section">
+                <h2>🏆 High Scores 🏆</h2>
+                <div id="leaderboard"></div>
+            </div>
+        </div>
+
+        <!-- Memory Match Game -->
+        <div id="memory-game" class="game-container" style="display: none;">
+            <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
+            <h2>Memory Match 🃏</h2>
+            <div class="score-display">
+                <span>Moves: <span id="memory-moves">0</span></span>
+                <span>Matches: <span id="memory-matches">0</span>/6</span>
+            </div>
+            <div id="memory-board" class="memory-board"></div>
+        </div>
+
+        <!-- Love Trivia Game -->
+        <div id="trivia-game" class="game-container" style="display: none;">
+            <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
+            <h2>Love Trivia ❤️</h2>
+            <div class="score-display">
+                <span>Score: <span id="trivia-score">0</span></span>
+                <span>Question: <span id="trivia-current">1</span>/5</span>
+            </div>
+            <div id="trivia-content"></div>
+        </div>
+
+        <!-- Cupid's Arrow Game -->
+        <div id="arrow-game" class="game-container" style="display: none;">
+            <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
+            <h2>Cupid's Arrow 🏹</h2>
+            <div class="score-display">
+                <span>Score: <span id="arrow-score">0</span></span>
+                <span>Time: <span id="arrow-time">30</span>s</span>
+            </div>
+            <div id="arrow-board" class="arrow-board"></div>
+        </div>
+
+        <!-- Word Scramble Game -->
+        <div id="scramble-game" class="game-container" style="display: none;">
+            <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
+            <h2>Word Scramble 💌</h2>
+            <div class="score-display">
+                <span>Score: <span id="scramble-score">0</span></span>
+                <span>Word: <span id="scramble-current">1</span>/5</span>
+            </div>
+            <div id="scramble-content">
+                <div class="scrambled-word" id="scrambled-display"></div>
+                <input type="text" id="scramble-input" placeholder="Type your answer...">
+                <button onclick="checkScramble()">Submit</button>
+                <div id="scramble-feedback"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with 💕 for Valentine's Day</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
